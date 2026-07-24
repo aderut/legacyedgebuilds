@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #0b0b0c;
+  color: #f3eee2;
+}
+
+/* Signature: the "finished edge" — a thin gold bevel that runs along one side
+   of key elements, referencing the literal edge/trim of an interior material. */
+.edge-top {
+  position: relative;
+}
+.edge-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c9a24b 15%, #e8cd84 50%, #c9a24b 85%, transparent);
+}
+
+.edge-left {
+  border-left: 2px solid transparent;
+  border-image: linear-gradient(180deg, transparent, #c9a24b 20%, #e8cd84 50%, #c9a24b 80%, transparent) 1;
+}
+
+.material-swatch {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid #7c5f22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-playfair);
+  color: #c9a24b;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.container-lg {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.eyebrow {
+  font-family: var(--font-inter);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #c9a24b;
+}
+
+::selection {
+  background: #c9a24b;
+  color: #0b0b0c;
+}
+
+:focus-visible {
+  outline: 2px solid #e8cd84;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-1,
+.animate-hero-2,
+.animate-hero-3,
+.animate-hero-4 {
+  opacity: 0;
+  animation: fade-up 0.8s ease-out forwards;
+}
+.animate-hero-1 { animation-delay: 0.05s; }
+.animate-hero-2 { animation-delay: 0.2s; }
+.animate-hero-3 { animation-delay: 0.35s; }
+.animate-hero-4 { animation-delay: 0.5s; }
